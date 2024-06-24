@@ -23,6 +23,25 @@ const (
 	AlgorithmES512                      // ECDSA on secp521r1 with SHA-512
 )
 
+func (alg Algorithm) String() string {
+	switch alg {
+	case AlgorithmPS256:
+		return "RSASSA-PSS-SHA-256"
+	case AlgorithmPS384:
+		return "RSASSA-PSS-SHA-384"
+	case AlgorithmPS512:
+		return "RSASSA-PSS-SHA-512"
+	case AlgorithmES256:
+		return "ECDSA-secp256r1-SHA-256"
+	case AlgorithmES384:
+		return "ECDSA-secp384r1-SHA-384"
+	case AlgorithmES512:
+		return "ECDSA-secp521r1-SHA-512"
+	default:
+		return "unknown algorithm value"
+	}
+}
+
 // KeyType defines the key type.
 type KeyType int
 
